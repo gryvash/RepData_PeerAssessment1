@@ -1,14 +1,11 @@
-```{r echo=FALSE}
-mTimeCreated <- Sys.time()
-```
 ---
 title: "Reproducible Research: Peer Assessment 1"
-author: "gryvash"
-date: `r mTimeCreated`
-output:
+output: 
   html_document:
     keep_md: true
 ---
+
+
 
 # Data analysis script
 ```{R echo=FALSE}
@@ -145,3 +142,4 @@ print(xyplot(`mData$stepsNoNA` ~ `mData$interval` | `mData$mWeekend`,
 dev.off()
 ```
 ### As expected there is a difference between patterns especially in the morning
+finished
