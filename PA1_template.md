@@ -1,7 +1,5 @@
-# Reproducible Research: Peer Assessment 1
 
-
-
+# Reproducible Research: Peer Assignment 1 
 # Data analysis script
 
 ## Download the raw data if not exist yet
@@ -47,7 +45,7 @@ mSumDaily <- tapply(mCleanData$steps, format(mCleanData$datetime, '%Y-%m-%d'), s
 hist(mSumDaily, breaks = 10, xlab = "Amount of steps", main = "Daily amount of steps", col = "green")
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-7-1.png)
+![plot of chunk unnamed-chunk-7](figure/unnamed-chunk-7-1.png)
 ### What is a mean and median number of steps per day?
 
 ```
@@ -66,7 +64,7 @@ plot(as.POSIXlt(mMeanInterval$`format(mCleanData$datetime, "%H:%M")`, format = "
      xlab = "Time", ylab = "Number of steps", main = "Mean number of steps", type = "l")
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-9-1.png)
+![plot of chunk unnamed-chunk-9](figure/unnamed-chunk-9-1.png)
 ### Get maximum steps and corresponding time stamp
 
 ```r
@@ -111,7 +109,7 @@ mSumDailyNoNA <- tapply(mData$stepsNoNA, format(mData$datetime, '%Y-%m-%d'), sum
 hist(mSumDailyNoNA, breaks = 10, xlab = "Amount of steps", main = "Daily amount of steps", col = "green")
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-14-1.png)
+![plot of chunk unnamed-chunk-14](figure/unnamed-chunk-14-1.png)
 ### What is a mean and median number of steps per day?
 
 ```
@@ -143,6 +141,6 @@ print(xyplot(`mData$stepsNoNA` ~ `mData$interval` | `mData$mWeekend`,
             ylab = "Number of steps"))
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-17-1.png)
+![plot of chunk unnamed-chunk-17](figure/unnamed-chunk-17-1.png)
 ### As expected there is a difference between patterns especially in the morning
 finished

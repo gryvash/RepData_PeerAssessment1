@@ -1,12 +1,7 @@
----
-title: "Reproducible Research: Peer Assessment 1"
-output: 
-  html_document:
-    keep_md: true
----
-
-
-
+```{r setoptions, echo=FALSE}
+opts_chunk$set(fig.path = "figure/")
+```
+# Reproducible Research: Peer Assignment 1 
 # Data analysis script
 ```{R echo=FALSE}
 graphics.off()
