@@ -48,11 +48,6 @@ mCleanData = mData[, c("steps","datetime")]
 mSumDaily <- tapply(mCleanData$steps, format(mCleanData$datetime, '%Y-%m-%d'), sum)
 hist(mSumDaily, breaks = 10, xlab = "Amount of steps", main = "Daily amount of steps", col = "green")
 ```
-```{R echo=FALSE, results="hide"}
-png(filename = "figure/plot1.png")
-hist(mSumDaily, breaks = 10, xlab = "Amount of steps", main = "Daily amount of steps", col = "green")
-dev.off()
-```
 ### What is a mean and median number of steps per day?
 ```{R echo=FALSE}
 print(sprintf("Daily steps, median = %f", median(mSumDaily, na.rm = TRUE)))
@@ -65,12 +60,6 @@ mMeanInterval <- aggregate(mCleanData$steps ~ format(mCleanData$datetime, '%H:%M
 plot(as.POSIXlt(mMeanInterval$`format(mCleanData$datetime, "%H:%M")`, format = "%H:%M"), mMeanInterval$`mCleanData$steps`,
      xlab = "Time", ylab = "Number of steps", main = "Mean number of steps", type = "l")
 
-```
-```{R echo=FALSE, results="hide"}
-png(filename = "figure/plot2.png")
-plot(as.POSIXlt(mMeanInterval$`format(mCleanData$datetime, "%H:%M")`, format = "%H:%M"), mMeanInterval$`mCleanData$steps`,
-     xlab = "Time", ylab = "Number of steps", main = "Mean number of steps", type = "l")
-dev.off()
 ```
 ### Get maximum steps and corresponding time stamp
 ```{R}
@@ -102,11 +91,6 @@ for(i in 1:length(mData$steps))
 mSumDailyNoNA <- tapply(mData$stepsNoNA, format(mData$datetime, '%Y-%m-%d'), sum)
 hist(mSumDailyNoNA, breaks = 10, xlab = "Amount of steps", main = "Daily amount of steps", col = "green")
 ```
-```{R echo=FALSE, results="hide"}
-png(filename = "figure/plot3.png")
-hist(mSumDailyNoNA, breaks = 10, xlab = "Amount of steps", main = "Daily amount of steps", col = "green")
-dev.off()
-```
 ### What is a mean and median number of steps per day?
 ```{R echo=FALSE}
 print(sprintf("Daily steps, median = %f", median(mSumDailyNoNA, na.rm = TRUE)))
@@ -130,16 +114,6 @@ print(xyplot(`mData$stepsNoNA` ~ `mData$interval` | `mData$mWeekend`,
             type="l",
             xlab = "Interval",
             ylab = "Number of steps"))
-```
-```{R echo=FALSE, results="hide"}
-png(filename = "figure/plot4.png")
-print(xyplot(`mData$stepsNoNA` ~ `mData$interval` | `mData$mWeekend`,
-            data = mMeanIntervalWeekday,
-            layout= c(1,2),
-            type="l",
-            xlab = "Interval",
-            ylab = "Number of steps"))
-dev.off()
 ```
 ### As expected there is a difference between patterns especially in the morning
 finished
